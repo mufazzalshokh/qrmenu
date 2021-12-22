@@ -1,0 +1,30 @@
+{% extends "registration/registration_base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Account Activated" %}{% endblock %}
+
+{% block content %}
+    <section style="position: relative;
+            height: 100vh;
+            width: 100%;
+            background-image: url('https://plov.press/10414574163463646_8c5d.jpg');
+            background-size: cover;
+            background-position: center center;">
+        <div class="form-container">
+{#            <h1 style="color: blue">Amalni tasdiqlang</h1>#}
+            <h1 style="color: red">Hush Kelibsiz</h1>
+           <a href="{% url 'menu:list' %}">
+
+               <button class="btn-primary ml-5  ">Tugmani Bosing</button>
+           </a>
+
+        </div>
+    </section>
+{% endblock %}
+{% comment %}
+**registration/activation_complete.html**
+
+Used after successful account activation. This template has no context
+variables of its own, and should simply inform the user that their
+account is now active.
+{% endcomment %}

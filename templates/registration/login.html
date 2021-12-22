@@ -1,0 +1,43 @@
+{% extends "registration/registration_base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "Log in" %}{% endblock %}
+
+{% block content %}
+    <section style="position: relative;
+            height: 100vh;
+            width: 100%;
+            background-image: url('https://plov.press/10414574163463646_8c5d.jpg');
+            background-size: cover;
+            background-position: center center;">
+        <div class="form-container">
+            <h1>Login Form</h1>
+            <form method="Post">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ next }}"/>
+                <div class="control">
+                    <label for="name">Username</label>
+                    <input name="username" placeholder="Username" type="text" id="name">
+                </div>
+                <div class="control">
+                    <label for="pws">Password</label>
+                    <input name="password" placeholder="Password" type="password" id="pws">
+                </div>
+                <span><input type="checkbox"> Remember me.</span>
+                <div class="control">
+                    <input type="submit" value="Login">
+                </div>
+                <div class="control">
+                    <a href="/social-auth/login/google-oauth2/">
+                        <input type="button" style="background-color: #764ba2" value="Login with Google">
+                    </a>
+                </div>
+                <div class="link"><a href="{% url 'auth_password_reset' %}">Forgot password ?</a></div>
+                <div class="link"><a style="background: crimson" href="{% url 'registration_register' %}">Register</a></div>
+            </form>
+        </div>
+    </section>
+{% endblock %}
+
+
