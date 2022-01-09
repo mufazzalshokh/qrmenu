@@ -15,6 +15,9 @@ class RestaurantModelSerializer(serializers.ModelSerializer):
 
 
 class MenuModelSerializer(serializers.ModelSerializer):
+	category = CategoryModelSerializer
+	restaurant = RestaurantModelSerializer
+
 	class Meta:
 		model = MenuModel
 		fields = '__all__'
