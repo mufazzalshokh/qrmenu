@@ -127,7 +127,7 @@ class OrderModel(models.Model):
     totalPrice = models.FloatField(null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     products = models.JSONField()
-    comments = models.TextField(null=True)
+    comments = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return self.name
