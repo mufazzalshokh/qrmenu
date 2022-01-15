@@ -69,7 +69,7 @@ class TableModel(models.Model):
             box_size=10,
             border=5,
         )
-        qr.add_data(f'http://vue.alpha4.uz/')
+        qr.add_data(f'http://food-shop-uz.netlify.app')
         qr.make(fit=True)
         img = qr.make_image(fill='black', back_color='white')
         f_name = f'{self.number}qrcode.png'
